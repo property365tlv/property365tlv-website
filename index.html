@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>פרופרטי 365 - ניהול נכסים ושירותי נדל"ן בתל אביב</title>
+<meta name="description" content="ניהול נכסים, ניהול מבנים ושירותי נדל״ן בתל אביב. אנחנו בפרופרטי 365 מציעים ניהול מקצועי ושקוף לנכסי יוקרה ובתים משותפים.">
+<meta property="og:title" content="פרופרטי 365 - ניהול נכסים">
+<meta property="og:description" content="ניהול נכסים ומבנים בתל אביב.">
+<meta property="og:image" content="https://property365.co.il/wp-content/uploads/2020/03/property365-500-x-300-%D7%A4%D7%99%D7%A7%D7%A1%D7%9C.png">
+<meta property="og:type" content="website">
+<link rel="icon" href="https://property365.co.il/wp-content/uploads/2020/03/property365-500-x-300-%D7%A4%D7%99%D7%A7%D7%A1%D7%9C.png">
+
+<!-- Google font for Hebrew and Latin -->
+<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --color-primary: #c8a13e; /* golden tone similar to the site */
+  --color-secondary: #0d0d0d; /* dark background */
+  --color-light: #f5f5f5;
+  --color-accent: #ffffff;
+  --font-base: 'Heebo', sans-serif;
+}
+body{
+  font-family: var(--font-base);
+  margin:0;
+  padding:0;
+  background-color:var(--color-secondary);
+  color:var(--color-accent);
+  line-height:1.6;
+}
+a{
+  color:var(--color-primary);
+  text-decoration:none;
+}
+nav{
+  background-color:rgba(13,13,13,0.95);
+  position:sticky;
+  top:0;
+  z-index:1000;
+  padding:1rem 2rem;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+nav .logo img { height: 48px; }
+nav ul{
+  list-style:none;
+  margin:0;
+  padding:0;
+  display:flex;
+  gap:1.5rem;
+}
+nav li a{
+  color:var(--color-accent);
+  font-weight:500;
+  transition:color 0.3s;
+}
+nav li a:hover{
+  color:var(--color-primary);
+}
+/* hero */
+.hero{
+  position:relative;
+  background-image:url('https://property365.co.il/wp-content/uploads/2024/01/WhatsApp-Image-2024-01-01-at-12.21.52.jpeg');
+  background-size:cover;
+  background-position:center;
+  min-height:60vh;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  color:#fff;
+}
+.hero::after{
+  content:"";
+  position:absolute;
+  top:0;left:0;width:100%;height:100%;
+  background:rgba(0,0,0,0.6);
+}
+.hero *{
+  position:relative;
+  z-index:1;
+}
+.hero h1{
+  font-size:3rem;
+  margin:0;
+}
+.hero p{
+  font-size:1.2rem;
+  margin:1rem 0;
+}
+.btn{
+  display:inline-block;
+  padding:0.75rem 1.5rem;
+  background-color:var(--color-primary);
+  color:var(--color-secondary);
+  border-radius:5px;
+  font-weight:600;
+  margin-top:1rem;
+  transition:background-color 0.3s ease;
+}
+.btn:hover{
+  background-color:#b48a2c;
+}
+/* sections */
+section{
+  padding:4rem 2rem;
+}
+.section-light{
+  background-color:#ffffff;
+  color:var(--color-secondary);
+}
+.section-dark{
+  background-color:var(--color-secondary);
+  color:var(--color-accent);
+}
+.section-title{
+  text-align:center;
+  font-size:2rem;
+  margin-bottom:2rem;
+  position:relative;
+  display:inline-block;
+}
+.section-title::after{
+  content:"";
+  display:block;
+  width:60px;height:4px;
+  background-color:var(--color-primary);
+  margin:0.5rem auto;
+}
+/* services grid */
+.services{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:2rem;
+}
+.service-card{
+  background-color:rgba(255,255,255,0.05);
+  padding:2rem;
+  border-radius:10px;
+  box-shadow:0 2px 6px rgba(0,0,0,0.2);
+  text-align:center;
+}
+.service-card h3{
+  margin-top:1rem;
+  font-size:1.3rem;
+  color:var(--color-primary);
+}
+.service-card p{
+  font-size:0.9rem;
+}
+/* gallery */
+.gallery{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:1rem;
+}
+.gallery img{
+  width:100%;
+  border-radius:8px;
+}
+/* process steps */
+.process{
+  display:flex;
+  flex-wrap:wrap;
+  gap:2rem;
+  justify-content:center;
+}
+.process-step{
+  flex:1 1 300px;
+  text-align:center;
+}
+.process-step .step-number{
+  font-size:2rem;
+  color:var(--color-primary);
+  font-weight:bold;
+}
+.pricing{
+  display:flex;
+  flex-wrap:wrap;
+  gap:2rem;
+  justify-content:center;
+}
+.price-card{
+  background-color:rgba(255,255,255,0.05);
+  padding:2rem;
+  border-radius:10px;
+  text-align:center;
+  flex:1 1 280px;
+}
+.price-card h4{
+  font-size:1.5rem;
+  color:var(--color-primary);
+  margin-bottom:1rem;
+}
+.price-card ul{
+  list-style:none;
+  padding:0;
+  margin:0;
+}
+.price-card li{
+  padding:0.5rem 0;
+  border-bottom:1px solid rgba(255,255,255,0.1);
+}
+.price-card .price{
+  font-size:2rem;
+  font-weight:bold;
+  margin:1rem 0;
+}
+/* testimonials */
+.testimonials{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+  gap:2rem;
+}
+.testimonial{
+  background-color:rgba(255,255,255,0.05);
+  padding:1.5rem;
+  border-radius:10px;
+  font-style:italic;
+}
+.testimonial .name{
+  margin-top:1rem;
+  font-weight:bold;
+  color:var(--color-primary);
+}
+.faqs{
+  max-width:800px;
+  margin:0 auto;
+}
+.faq-item{
+  margin-bottom:1.5rem;
+}
+.faq-item h4{
+  font-size:1.1rem;
+  color:var(--color-primary);
+  margin:0 0 0.5rem;
+  cursor:pointer;
+}
+.faq-item p{
+  margin:0;
+  display:none;
+}
+.contact{
+  text-align:center;
+}
+.contact-info{
+  margin-top:1rem;
+}
+.footer{
+  background-color:#101010;
+  color:#bbbbbb;
+  padding:2rem;
+  text-align:center;
+  font-size:0.9rem;
+}
+@media(max-width:768px){
+  .hero h1{ font-size:2.2rem; }
+  nav ul{ flex-direction:column; gap:1rem; margin-top:1rem; }
+}
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function(){
+  const faqHeaders = document.querySelectorAll('.faq-item h4');
+  faqHeaders.forEach(header => {
+    header.addEventListener('click', () => {
+      const p = header.nextElementSibling;
+      p.style.display = p.style.display === 'block' ? 'none' : 'block';
+    });
+  });
+});
+</script>
+</head>
+<body>
+<nav>
+  <div class="logo">
+    <img src="https://property365.co.il/wp-content/uploads/2020/03/property365-500-x-300-%D7%A4%D7%99%D7%A7%D7%A1%D7%9C.png" alt="פרופרטי 365 לוגו">
+  </div>
+  <ul>
+    <li><a href="#services">שירותים</a></li>
+    <li><a href="#process">תהליך</a></li>
+    <li><a href="#pricing">מחירים</a></li>
+    <li><a href="#testimonials">המלצות</a></li>
+    <li><a href="#faq">שאלות נפוצות</a></li>
+    <li><a href="#contact">צור קשר</a></li>
+  </ul>
+</nav>
+<header class="hero">
+  <h1>ניהול נכסים ובתים משותפים</h1>
+  <p>מתחברים לכל נכס כאילו היה שלנו ומבטיחים שקט נפשי וביצועים לאורך כל הדרך.</p>
+  <a href="#contact" class="btn">צור קשר</a>
+</header>
+
+<section id="services" class="section-dark">
+  <h2 class="section-title">השירותים שלנו</h2>
+  <div class="services">
+    <div class="service-card">
+      <h3>ניהול נכסים</h3>
+      <p>שירות מלא הכולל טיפול בדיירים, גבייה, תחזוקה וייצוג מול ספקים – לכם נשאר רק להנות מהשקעה.</p>
+    </div>
+    <div class="service-card">
+      <h3>ניהול בתים משותפים</h3>
+      <p>ניהול שקוף ומקצועי לבניינים משותפים, טיפול בתיקונים, ניקיון, ביטוחים ומאזן חודשי.</p>
+    </div>
+    <div class="service-card">
+      <h3>תיווך ושיווק</h3>
+      <p>שיווק נכסים להשכרה ומכירה, פרסום מקצועי, ליווי בהשבחה וחיבור בין בעלי הנכס לרוכשים/שוכרים.</p>
+    </div>
+    <div class="service-card">
+      <h3>ייעוץ וליווי</h3>
+      <p>אנחנו איתכם גם בשלבי תכנון והשקעה, מתן ייעוץ מקצועי וקשרים עם בעלי מקצוע איכותיים.</p>
+    </div>
+  </div>
+</section>
+
+<section id="gallery" class="section-light">
+  <h2 class="section-title">גלריה</h2>
+  <div class="gallery">
+    <img src="https://property365.co.il/wp-content/uploads/2024/01/WhatsApp-Image-2024-01-01-at-12.21.52.jpeg" alt="נכס בתל אביב">
+    <!-- ניתן להוסיף תמונות נוספות מתוך האתר באמצעות קישורים דומים -->
+  </div>
+</section>
+
+<section id="process" class="section-dark">
+  <h2 class="section-title">איך זה עובד?</h2>
+  <div class="process">
+    <div class="process-step">
+      <div class="step-number">01</div>
+      <h3>היכרות ואפיון</h3>
+      <p>נפגשים ומבינים את הצרכים של הנכס והציפיות שלכם כבעלי נכס.</p>
+    </div>
+    <div class="process-step">
+      <div class="step-number">02</div>
+      <h3>ניהול ותפעול</h3>
+      <p>מטפלים בכל היבטי הניהול – החל מהשכרת הנכס ועד תחזוקה שוטפת.</p>
+    </div>
+    <div class="process-step">
+      <div class="step-number">03</div>
+      <h3>דיווח ושקיפות</h3>
+      <p>מעבירים לכם דוחות שוטפים על ביצועי הנכס, הכנסות, הוצאות וכל מה שקורה בשטח.</p>
+    </div>
+  </div>
+</section>
+
+<section id="pricing" class="section-light">
+  <h2 class="section-title">מחירים</h2>
+  <div class="pricing">
+    <div class="price-card">
+      <h4>חבילת בסיס</h4>
+      <div class="price">₪X לחודש</div>
+      <ul>
+        <li>ניהול דיירים וגבית שכ"ד</li>
+        <li>דיווח חודשי</li>
+        <li>שירותי תחזוקה בסיסיים</li>
+      </ul>
+    </div>
+    <div class="price-card">
+      <h4>חבילת פרימיום</h4>
+      <div class="price">₪Y לחודש</div>
+      <ul>
+        <li>כל מה שבחבילה הבסיסית</li>
+        <li>השבחת נכס וליווי משפטי</li>
+        <li>ייעוץ השקעות</li>
+      </ul>
+    </div>
+    <div class="price-card">
+      <h4>חבילת ניהול מבנה</h4>
+      <div class="price">₪Z לחודש</div>
+      <ul>
+        <li>ניהול בניין מלא</li>
+        <li>טיפול בכל הספקים והחשבון המשותף</li>
+        <li>ישיבות ועד ומעקב אחר פרויקטים</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="testimonials" class="section-dark">
+  <h2 class="section-title">המלצות לקוחות</h2>
+  <div class="testimonials">
+    <div class="testimonial">
+      <p>“העברנו את ניהול הדירה שלנו לפרופרטי 365 ומאז אנחנו שקטים. הם מטפלים בכל הדיירים והמבנה ברמה הגבוהה ביותר.”</p>
+      <div class="name">– רועי מ., תל אביב</div>
+    </div>
+    <div class="testimonial">
+      <p>“השקעה שקטה ומניבה – ככה ניהול נכסים צריך להיות. שירות אישי ומקצועי לכל אורך הדרך.”</p>
+      <div class="name">– דנה ל., גבעתיים</div>
+    </div>
+    <div class="testimonial">
+      <p>“תודה לפרופרטי 365 על ליווי צמוד במכירת הדירה שלנו. קיבלנו מחיר מצוין ושירות מכל הלב.”</p>
+      <div class="name">– יוסי א., רמת גן</div>
+    </div>
+  </div>
+</section>
+
+<section id="faq" class="section-light">
+  <h2 class="section-title">שאלות נפוצות</h2>
+  <div class="faqs">
+    <div class="faq-item">
+      <h4>מה כולל שירות ניהול נכסים?</h4>
+      <p>השירות כולל טיפול מלא בדיירים, תחזוקה שוטפת, גביית שכ"ד, קשר עם ספקים ודיווח חודשי לבעל הנכס.</p>
+    </div>
+    <div class="faq-item">
+      <h4>איך נקבע המחיר?</h4>
+      <p>המחיר מותאם לסוג הנכס, היקף השירותים והיקף העבודה הנדרש. נציגינו יתאימו חבילה אישית עבורכם.</p>
+    </div>
+    <div class="faq-item">
+      <h4>האם אתם מטפלים בנכסים מחוץ לתל אביב?</h4>
+      <p>כן, אנחנו מציעים שירותי ניהול נכסים ובתים משותפים גם בגבעתיים, רמת גן ואזורים נוספים בגוש דן.</p>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="section-dark contact">
+  <h2 class="section-title">צור קשר</h2>
+  <p>נשמח לשוחח ולהתאים לכם פתרון ניהול אישי. השאירו פרטים או צרו קשר ישירות:</p>
+  <div class="contact-info">
+    <p>טלפון: <a href="tel:+972522226069">052-2226069</a></p>
+    <p>Email: <a href="mailto:property365tlv@gmail.com">property365tlv@gmail.com</a></p>
+    <p>כתובת: הירקון 319, תל אביב</p>
+  </div>
+  <a href="mailto:property365tlv@gmail.com?subject=פנייה%20מאתר%20ניהול%20נכסים" class="btn">שלחו לנו הודעה</a>
+</section>
+
+<footer class="footer">
+  כל הזכויות שמורות לפרופרטי 365 &copy; 2025
+</footer>
+</body>
+</html>
